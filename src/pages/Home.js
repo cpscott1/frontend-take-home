@@ -13,12 +13,22 @@ const Home = () => {
     fetch('https://fakestoreapi.com/products')
       .then(res=>res.json())
       .then(products => setShop({ ...shop, products: products }))
-      console.log(shop)
-  }, [])
+
+  },[])
+
+  const { products } = shop
+
+  console.log(products)
 
   return (
     <Box>
-      <Text>Home</Text>
+      {products.map(product => (
+        <div key={product.id}>
+          <img src={product.image}/>
+          <p>{product.title}</p>
+          <p>{product.price}</p>
+        </div>
+      ))}
     </Box>
   )
 }
