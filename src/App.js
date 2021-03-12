@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
     <form>
-      <input type='search' placeholder='go' onChange={(e) => setShop({ ...shop, search: e.target.value })}/>
+      <input type='search' placeholder='search' onChange={(e) => setShop({ ...shop, search: e.target.value })}/>
     </form>
       <Switch>
         <Route path='/' exact>

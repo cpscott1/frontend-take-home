@@ -17,7 +17,7 @@ const breakpoints = createBreakpoints({
       {products.map(product => (
         <Link to={`/${product.id}`}>
           <Grid templateColumns={["repeat(1, 1fr)"]} key={product.id} textAlign="center">
-            <Image src={product.image} w="40%" m="auto"/>
+            <Image src={product.image} w={{md: "40%", lg: "50%"}} h={["25vh", "35vh"]} objectFit="contain" m="auto"/>
             <p>{product.title}</p>
             <p>{product.price}</p>
           </Grid>
