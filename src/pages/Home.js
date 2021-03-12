@@ -1,22 +1,29 @@
 import { Link } from 'react-router-dom'
 import { Box, Grid, Text, Image } from '@chakra-ui/react'
+import { createBreakpoints } from "@chakra-ui/theme-tools"
 
 const Home = ({ products }) => {
 
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+})
 
   return (
-    <Box>
-      
+    <Grid templateColumns={{md: "repeat(1, 1fr)",  lg: "repeat(3, 1fr)"}}>
+
       {products.map(product => (
         <Link to={`/${product.id}`}>
-          <div key={product.id}>
-            <img src={product.image}/>
+          <Grid templateColumns={["repeat(1, 1fr)"]} key={product.id} textAlign="center">
+            <Image src={product.image} w="40%" m="auto"/>
             <p>{product.title}</p>
             <p>{product.price}</p>
-          </div>
+          </Grid>
         </Link>
       ))}
-    </Box>
+    </Grid>
   )
 }
 
