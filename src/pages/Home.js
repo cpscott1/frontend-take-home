@@ -6,6 +6,7 @@ const Home = ({ products }) => {
 
   return (
     <Box>
+      
       {products.map(product => (
         <Link to={`/${product.id}`}>
           <div key={product.id}>

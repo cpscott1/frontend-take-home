@@ -17,16 +17,22 @@ function App() {
 
   },[])
 
-  const { products } = shop
+  const { products, search } = shop
 
   console.log(products)
 
+  const filteredProducts = products.filter(product => {
+    return product.title.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <div className="App">
+    <form>
+      <input type='search' placeholder='go' onChange={(e) => setShop({ ...shop, search: e.target.value })}/>
+    </form>
       <Switch>
         <Route path='/' exact>
-          <Home products={products}/>
+          <Home products={filteredProducts}/>
         </Route>
         <Route path='/:id'>
           <Product products={products}/>
