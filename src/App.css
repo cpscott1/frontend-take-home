@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-input {
+  border: 1px solid black;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .search-input {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .search {
+    justify-content: center;
+  }
+}

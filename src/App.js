@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Product from './pages/Product'
+import './App.css'
 
 function App() {
 
@@ -27,8 +28,8 @@ function App() {
 
   return (
     <div className="App">
-    <form>
-      <input type='search' placeholder='search' onChange={(e) => setShop({ ...shop, search: e.target.value })}/>
+    <form className="search">
+      <input className="search-input" type='search' placeholder='search' onChange={(e) => setShop({ ...shop, search: e.target.value })}/>
     </form>
       <Switch>
         <Route path='/' exact>
